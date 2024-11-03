@@ -1,18 +1,17 @@
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Contact } from "./ContactComponent/Contact";
+import { Home } from "./HomeCOmponents/Home";
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: (
-        <div>Hello world! go to /test to check if the router is working</div>
-      ),
+      element: <Home />,
     },
     {
-      path: "/test",
-      element: <div>Test! works!!</div>,
+      path: "/contact",
+      element: <Contact />,
     },
   ],
   { basename: "/react-vite-portfolio" }
@@ -21,11 +20,6 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <RouterProvider router={router} />
     </>
   );
