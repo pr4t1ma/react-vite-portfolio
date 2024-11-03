@@ -1,4 +1,15 @@
-export const FooterMenu = ({ items }) => {
+import { FC } from "react";
+
+type Item = {
+  label: string;
+  href: string;
+};
+
+type FooterMenuProps = {
+  items: Item[];
+};
+
+export const FooterMenu: FC<FooterMenuProps> = ({ items }) => {
   return (
     <div>
       <ul className=" flex flex-col md:flex md:flex-row md:justify-center my-10">

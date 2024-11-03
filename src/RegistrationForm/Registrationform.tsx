@@ -2,17 +2,20 @@ import { useState } from "react";
 
 const Registrationform = () => {
   const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState({
+  const [email, setEmail] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [password, setPassword] = useState<{
+    value: string;
+    isTouched: boolean;
+  }>({
     value: "",
     isTouched: false,
   });
 
-  const [role, setRole] = useState("role");
-  const isFormValid = () => {
-    return firstName && password.value.length >= 8 && role !== "role";
-  };
+  // const [role, setRole] = useState<string>("role");
+  // const isFormValid = (): boolean => {
+  //   return firstName && password.value.length >= 8 && role !== "role";
+  // };
 
   const clearForm = () => {
     setFirstName("");
@@ -23,10 +26,9 @@ const Registrationform = () => {
       value: "",
       isTouched: false,
     });
-    setRole("role");
   };
 
-  const submitBtn = (e) => {
+  const submitBtn = (e: React.FormEvent): void => {
     e.preventDeffault();
     alert("account create!");
     clearForm();
@@ -97,8 +99,7 @@ const Registrationform = () => {
           <div className="field">
             <label htmlFor="role">Role</label>
             <select
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
+              onChange={(e) => e.target.value}
               className="w-full p-2 border-2 border-warmGray-200 rounded-xl my-4"
             >
               <option value="role">Role</option>

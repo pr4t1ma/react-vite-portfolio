@@ -1,6 +1,14 @@
+import { FC } from "react";
 import { Tags } from "../Tags/Tags";
 
-export const Project = ({ title, subtitle, text, img }) => {
+type ProjectProps = {
+  title: string;
+  subtitle: string;
+  text: string;
+  img: string;
+};
+
+export const Project: FC<ProjectProps> = ({ title, subtitle, text, img }) => {
   const items = [
     { label: "HTML", href: "/" },
     { label: "Grid", href: "/" },

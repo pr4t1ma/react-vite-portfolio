@@ -3,7 +3,7 @@ import { useState } from "react";
 const Shoppinglist = () => {
   const [inputVal, setInputVal] = useState("");
 
-  const handlerInputVal = (e) => {
+  const handlerInputVal = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputVal(e.target.value);
     console.log(e, "Hello");
   };

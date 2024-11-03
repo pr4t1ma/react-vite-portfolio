@@ -1,4 +1,17 @@
-export const Panels = ({ text, heading, subHeading, date }) => {
+import { FC } from "react";
+type PanelsProps = {
+  text: string;
+  heading: string;
+  subHeading: string;
+  date: number;
+};
+
+export const Panels: FC<PanelsProps> = ({
+  text,
+  heading,
+  subHeading,
+  date,
+}) => {
   return (
     <div className="">
       <div className="panel text-left mb-10">
