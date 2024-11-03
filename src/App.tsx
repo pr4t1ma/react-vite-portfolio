@@ -15,7 +15,7 @@ const router = createBrowserRouter(
       element: <div>Test! works!!</div>,
     },
   ],
-  { basename: "/vite-react-router-github-pages" }
+  { basename: "/react-vite-portfolio" }
 );
 
 function App() {
