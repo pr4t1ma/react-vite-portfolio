@@ -1,12 +1,12 @@
-import  { useState } from "react";
+import { useState } from "react";
+
 export const Screen = () => {
   const [screenNumber, setScreenNumber] = useState("0");
-  const buttonClickHandler = (e) => {
+  const buttonClickHandler = (e: any) => {
     setScreenNumber((old) => {
       if (e.target.value === "Ac") {
         return "0";
       } else if (e.target.value === "=") {
-        // eslint-disable-next-line no-eval
         return eval(screenNumber);
       } else {
         return old === "0" ? e.target.value : old + e.target.value;
@@ -20,9 +20,10 @@ export const Screen = () => {
         {screenNumber}
       </div>
       <div className="button-list grid gap-2 grid-cols-4 ">
-        <button onClick={buttonClickHandler} value="1">
+        <button type="button" onClick={buttonClickHandler} value="1">
           1
         </button>
+
         <button onClick={buttonClickHandler} value="2">
           2
         </button>

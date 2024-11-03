@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { FC, useState } from "react";
+type TabItem = {
+  label: string;
+};
+type TabsProps = {
+  items: TabItem[];
+  onTabChange: (i: number) => void;
+};
 
-export const Tabs = ({ items, onTabChange }) => {
+export const Tabs: FC<TabsProps> = ({ items, onTabChange }) => {
   const [active, setActive] = useState(0);
 
-  const onItemClick = (i) => {
+  const onItemClick = (i: number) => {
     console.log(i);
     onTabChange(i);
     setActive(i);

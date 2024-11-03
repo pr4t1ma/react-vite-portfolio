@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-export const Accordion = ({ title, content }) => {
+
+type AccordionProps = {
+  title: string;
+  content: string;
+};
+export const Accordion: FC<AccordionProps> = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <div className="container mx-auto bg-white bg-opacity-50 shadow-xlS p-5 my-3 ">

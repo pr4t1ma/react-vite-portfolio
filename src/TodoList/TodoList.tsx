@@ -1,8 +1,12 @@
 import { useState } from "react";
+type TodoItem = {
+  id: number;
+  value: string;
+};
 
 export const TodoList = () => {
   const [newItem, setNewItem] = useState("");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<TodoItem[]>([]);
   const [isFormOpen, setFormOpen] = useState(false);
 
   const addItem = () => {
@@ -23,7 +27,7 @@ export const TodoList = () => {
   const closeForm = () => {
     setFormOpen(false);
   };
-  const deleteItem = (id) => {
+  const deleteItem = (id: number) => {
     console.log(id);
     const newArray = items.filter((item) => item.id !== id);
     setItems(newArray);
@@ -59,8 +63,8 @@ export const TodoList = () => {
             {items.map((item) => {
               return (
                 <li key={item.id}>
-                  <p>todo</p>
-                  <button onClick={deleteItem}>delete</button>
+                  <p>{item.value}</p>
+                  <button onClick={() => deleteItem(item.id)}>delete</button>
                 </li>
               );
             })}

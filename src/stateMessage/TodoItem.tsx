@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 
-export const TodoItem = ({ id, text, onDelete }) => {
+type TodoItemProps = {
+  id: number;
+  text: string;
+  onDelete: (id: number) => void;
+};
+
+export const TodoItem: FC<TodoItemProps> = ({ id, text, onDelete }) => {
   const [done, setDone] = useState(false);
   return (
     <div className={`flex my-3 ${done ? "line-through" : ""}`}>
@@ -8,7 +14,7 @@ export const TodoItem = ({ id, text, onDelete }) => {
         className="my-2 mr-5"
         type="checkbox"
         defaultChecked={done}
-        onChange={(e) => {
+        onChange={() => {
           setDone(!done);
           console.log(done);
         }}
