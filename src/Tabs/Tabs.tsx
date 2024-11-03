@@ -15,7 +15,7 @@ export const Tabs = ({ items, onTabChange }) => {
         <li key={item.label}>
           <button
             className={`${
-              active === i ? "active" : ""
+              active === i ? "bg-oxblood text-white" : ""
             } w-full block py-3 px-4 hover:bg-oxblood hover:text-white`}
             onClick={() => {
               onItemClick(i);
