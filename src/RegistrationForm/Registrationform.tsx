@@ -20,7 +20,10 @@ const Registrationform = () => {
   const clearForm = () => {
     setFirstName("");
     setLastName("");
-    setPassword("");
+    setPassword({
+      value: "",
+      isTouched: false,
+    });
     setEmail("");
     setPassword({
       value: "",
@@ -29,7 +32,7 @@ const Registrationform = () => {
   };
 
   const submitBtn = (e: React.FormEvent): void => {
-    e.preventDeffault();
+    e.preventDefault();
     alert("account create!");
     clearForm();
   };
