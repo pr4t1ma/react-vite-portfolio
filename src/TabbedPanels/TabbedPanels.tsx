@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Panels } from "../Panels/Panels";
 import { Tabs } from "../Tabs/Tabs";
+
 import { panelsData } from "./TabbedPanelsData";
 import { items } from "./TabbedPanelsData";
 
@@ -20,7 +21,7 @@ export const TabbedPanels = () => {
           (panelData, i) =>
             active === i && (
               <Panels
-                key={panelData}
+                key={i}
                 heading={panelData.heading}
                 date={panelData.date}
                 text={panelData.text}

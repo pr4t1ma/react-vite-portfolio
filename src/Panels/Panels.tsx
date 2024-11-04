@@ -3,7 +3,7 @@ type PanelsProps = {
   text: string;
   heading: string;
   subHeading: string;
-  date: number;
+  date: string;
 };
 
 export const Panels: FC<PanelsProps> = ({
@@ -20,7 +20,6 @@ export const Panels: FC<PanelsProps> = ({
           <h3>{subHeading} </h3>
           <h4>{date}</h4>
         </div>
-
         <p>{text}</p>
       </div>
     </div>
