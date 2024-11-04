@@ -1,4 +1,11 @@
-export const GetInTouch = ({ title, subtitle, text }) => {
+import { FC } from "react";
+type GetInTouchProps = {
+  title: string;
+  subtitle: string;
+  text: string;
+};
+
+export const GetInTouch: FC<GetInTouchProps> = ({ title, subtitle, text }) => {
   return (
     <div className="get-intouch container mx-2 w-fit bg-white shadow-2xl p-7 text-center mb-20  md:mx-auto lg:max-w-4xl lg:mx-auto">
       <h1 className="text-tan my-5 "> {title} </h1>
