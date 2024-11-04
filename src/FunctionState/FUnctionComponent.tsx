@@ -1,12 +1,12 @@
 import { useState } from "react";
 export const FunctionComponent = () => {
-  const [color, setColor] = useState("red");
-  const [brand, setBrand] = useState("Select the brand");
+  const [color, setColor] = useState<string>("red");
+  const [brand, setBrand] = useState<string>("Select the brand");
 
-  const changeColor = (e) => {
+  const changeColor = (e: React.ChangeEvent<HTMLInputElement>) => {
     setColor(e.target.value);
   };
-  const changeBrand = (e) => {
+  const changeBrand = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBrand(e.target.value);
   };
 
@@ -14,19 +14,19 @@ export const FunctionComponent = () => {
     <div>
       <h1 style={{ color }}>Hello World {color}</h1>
       <p>Brand: {brand}</p>
-      <select name="color" id="color" onChange={changeColor}>
+      <select name="color" id="color" onChange={() => changeColor}>
         <option value="red">Red</option>
         <option value="green">Green</option>
         <option value="blue">Blue</option>
       </select>
 
-      <button onClick={changeBrand} value="Mercedez">
-        Mercedese{" "}
+      <button onClick={() => changeBrand} value="Mercedez">
+        Mercedese
       </button>
-      <button onClick={changeBrand} value="Fork">
+      <button onClick={() => changeBrand} value="Fork">
         Ford
       </button>
-      <button onClick={changeBrand} value="BMW">
+      <button onClick={() => changeBrand} value="BMW">
         BMW
       </button>
     </div>
