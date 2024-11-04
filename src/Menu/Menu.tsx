@@ -1,5 +1,15 @@
+import { FC } from "react";
 import { Link } from "react-router-dom";
-export const Menu = ({ items }) => {
+
+type Item = {
+  label: string;
+  href: string;
+};
+
+type MenuProps = {
+  items: Item[];
+};
+export const Menu: FC<MenuProps> = ({ items }) => {
   return (
     <div className=" item-left gap-5 items-center md:flex md:justify-start md:col-span-1 lg:col-span-3 lg:justify-end  ">
       <ul className="divide-y divide-tan md:flex md:justify-center md:gap-8 md:border-none md:divide-none ">
