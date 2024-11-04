@@ -5,9 +5,9 @@ import { panelsData } from "./TabbedPanelsData";
 import { items } from "./TabbedPanelsData";
 
 export const TabbedPanels = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number>(0);
 
-  const onTabChangeHandler = (i) => {
+  const onTabChangeHandler = (i: number): void => {
     setActive(i);
   };
   return (

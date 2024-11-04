@@ -1,8 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, FC, useState } from "react";
 const ThemeContext = createContext(undefined);
 
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+type ThemeProviderProps = {
+  theme: "light" | "dark";
+  toggleTheme: () => void;
+};
+
+const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   return (
     <div>
       <ThemeContext.Provider
