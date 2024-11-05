@@ -25,12 +25,6 @@ export const Intro = () => {
               movies, listening to music, and traveling.
             </p>
           </div>
-          <div className="my-10 flex gap-5">
-            <button>Hey</button>
-            <a href="/" className="button">
-              Link with Btn style
-            </a>
-          </div>
         </div>
       </div>
     </div>
