@@ -16,7 +16,7 @@ export const Menu: FC<MenuProps> = ({ items }) => {
         {items.map((item) => (
           <li key={item.label}>
             <Link
-              to={item.href}
+              to="/"
               className="hover:text-gray-200 ease-in-out py-3 px-4 block text-black"
             >
               {item.label}
