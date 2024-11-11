@@ -1,9 +1,7 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Contact } from "./ContactComponent/Contact";
-import { Home } from "./HomeCOmponents/Home";
-import { Header } from "./Header/Header";
-import { Footer } from "./Footer/Footer";
+import { Contact } from "./pages/ContactComponent/Contact";
+import { Home } from "./pages/HomeCOmponents/Home";
 
 const router = createBrowserRouter(
   [
@@ -22,9 +20,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <Header />
       <RouterProvider router={router} />
-      <Footer />
     </>
   );
 }

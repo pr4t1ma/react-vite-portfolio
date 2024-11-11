@@ -1,4 +1,4 @@
-import profilePic from "../assets/profile-pic.png";
+import profilePic from "../../assets/profile-pic.png";
 
 export const Intro = () => {
   return (
@@ -7,14 +7,16 @@ export const Intro = () => {
         <div className="md:order-2">
           <img src={profilePic} alt="" />
         </div>
-        <div className="max-w-3xl">
-          <p className="py-0 text-4xl text-tan">My name is </p>
+
+        <div className="max-w-3xl text-content text-center md:text-left space-y-4">
+          <p className="py-0 text-4xl text-tan font-semibold">My name is </p>
           <h1 className=" pt-2 text-3xl lg:text-5xl">Pratima Maharjan</h1>
           <h2 className="py-2 text-xl">
             I am currently Learning Web development
           </h2>
+
           <div className="info-me my-1">
-            <p>
+            <p className="text-lg leading-relaxed text-gray-700 font-light max-w-prose space-y-4">
               I'm a UI/UX designer diving into web development. I'm passionate
               about creating seamless user experiences by blending design with
               technology. I am currently focusing on learning HTML, CSS,
