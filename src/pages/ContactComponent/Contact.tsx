@@ -23,7 +23,7 @@ export const Contact = () => {
   };
 
   return (
-    <div className="my-10">
+    <div className=" ">
       <Layout>
         <GetInTouch
           title="What's Next?"
@@ -32,19 +32,16 @@ export const Contact = () => {
         />
         <form
           onSubmit={handleSubmit}
-          className="container max-w-screen-md mx-auto bg-gray p-10 rounded-md shadow-md"
+          className="container max-w-screen-md mx-auto  rounded-md bg-warmGray-300 shadow-xl p-20 text-center mb-20  md:mx-auto lg:max-w-4xl lg:mx-auto "
         >
-          <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block text-gray-700 font-bold mb-2"
-            >
+          <div className="mb-4 flex flex-col items-start ">
+            <label htmlFor="name" className=" text-gray-700 font-bold mb-2">
               Name (required)
             </label>
             <input
               type="text"
               id="name"
-              className="shadow appearance-none w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-none rounded-md p-20"
+              className="shadow appearance-none w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-300 rounded-md p-20"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -90,7 +87,7 @@ export const Contact = () => {
             </label>
             <textarea
               id="message"
-              className="shadow appearance-none border rounded w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border-gray rounded w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               rows={5}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
