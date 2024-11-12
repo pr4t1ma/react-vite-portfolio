@@ -9,8 +9,6 @@ import { Intro } from "../../components/Intro/Intro";
 import { Project } from "../../components/Project/Project";
 // import Shoppinglist from "../Shoppinglist/Shoppinglist";
 import { TabbedPanels } from "../../components/TabbedPanels/TabbedPanels";
-import { Header } from "../../components/Header/Header";
-import { Footer } from "../../components/Footer/Footer";
 import { Layout } from "../Layout";
 
 export const Home = () => {
@@ -86,15 +84,6 @@ export const Home = () => {
           web pages, styling elements with CSS, and implementing interactive
           features using JavaScript"
             />
-          </div>
-
-          <div className="container mx-auto place-items-center w-fit block mb-20 shadow-2xl shadow-gray">
-            <a
-              className="button bg-oxblood text-white px-3 py-3 rounded-md"
-              href="/"
-            >
-              See more
-            </a>
           </div>
         </div>
       </Layout>
