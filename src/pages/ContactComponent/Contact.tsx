@@ -47,7 +47,7 @@ export const Contact = () => {
               required
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 flex flex-col items-start">
             <label
               htmlFor="email"
               className="block text-gray-700 font-bold mb-2"
@@ -63,7 +63,7 @@ export const Contact = () => {
               required
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 flex flex-col items-start">
             <label
               htmlFor="subject"
               className="block text-gray-700 font-bold mb-2"
@@ -78,7 +78,7 @@ export const Contact = () => {
               onChange={(e) => setSubject(e.target.value)}
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 flex flex-col items-start">
             <label
               htmlFor="message"
               className="block text-gray-700 font-bold mb-2"

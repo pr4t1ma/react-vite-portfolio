@@ -78,10 +78,10 @@ export const Home = () => {
               figma="https://www.figma.com/proto/79LusJXlmKPZBcxbRdFgOi/Portfolio?node-id=1195-1826&t=bqRRyxf5x7wAyxLr-1&scaling=min-zoom&content-scaling=fixed&page-id=45%3A240&starting-point-node-id=1101%3A1747"
               img={imgPortfolio}
               text="This project was created to enhance my skills in HTML, CSS, and
-          JavaScript. By working on this project, I aimed to deepen my
-          understanding of front-end web development concepts and techniques.
-          Throughout the process, I gained valuable experience in structuring
-          web pages, styling elements with CSS, and implementing interactive
+            JavaScript. By working on this project, I aimed to deepen my
+            understanding of front-end web development concepts and techniques.
+            Throughout the process, I gained valuable experience in structuring
+            web pages, styling elements with CSS, and implementing interactive
           features using JavaScript"
             />
           </div>
