@@ -3,10 +3,8 @@ import { SocialMediaIcon } from "../SocialMedia/SocialMediaIcon";
 
 export const Footer = () => {
   const footermenu = [
-    { label: "home", href: "/" },
-    { label: "Blog", href: "/" },
+    { label: "Home", href: "/" },
     { label: "Contact", href: "/" },
-    { label: "service", href: "/" },
   ];
   return (
     <div className=" bg-oxblood p-10 text-center shadow-4xl shadow-red-800 text-white">
