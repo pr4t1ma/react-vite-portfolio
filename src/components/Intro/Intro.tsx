@@ -7,7 +7,6 @@ export const Intro = () => {
         <div className="md:order-2">
           <img src={profilePic} alt="" />
         </div>
-
         <div className="max-w-3xl text-content text-center md:text-left space-y-4">
           <p className="py-0 text-4xl text-tan font-semibold">My name is </p>
           <h1 className=" pt-2 text-3xl lg:text-5xl">Pratima Maharjan</h1>

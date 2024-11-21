@@ -11,22 +11,14 @@ export const panelsData = [
     heading: "HTMl learn during Internship",
     subHeading: "Mastered HTML with W3Schools and FreeCodeCamp. Applied skills in real-world projects during my internship. ",
     date: "2014 ",
-    text: `"my self-learning journey with HTML, 
-    I found myself captivated by its foundational role in web development. 
-    Through dedicated practice and exploration, 
-    I swiftly progressed from a novice to a confident HTML developer. 
-  
-    Today, I adeptly structure elements within HTML documents,
-     leveraging tags and attributes to create cohesive web pages. 
-     This journey has been transformative, fueling my passion for web development and 
-     inspiring me to continue honing my skills. As I look ahead, I am eager to delve deeper 
-     into the world of HTML and explore new horizons in web development"`,
+    text: `During my self-learning journey with HTML, I became fascinated by how important it is in web development. With regular practice and exploration, I quickly grew from a beginner to a confident HTML developer. 
+`
   },
   {
     heading: "CSS learn during Internship",
     subHeading: "Training in 3hammbers in nepal",
     date: "2014",
-    text: "during my training time, I got chance to learn html, css bootstrape css and photoshop. That time I heve design website by writing css code my adding background, padding margin and adding images and creating cards design.  ",
+    text: "During my internship, I learned CSS by translating design mockups into nice layouts. I used CSS to add margins, padding for spacing, background colors, images, and card designs. CSS helped me make the designs look polished and professional.",
   },
   {
     heading: "Javascript course from Redi school ",

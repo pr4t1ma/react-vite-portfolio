@@ -42,7 +42,7 @@ const Registrationform = () => {
       <form
         onSubmit={submitBtn}
         action=""
-        className="bg-oxblood text-white p-20 rounded-md"
+        className="bg-oxblood text-white p-20 rounded-md border-[20px] border-oxblood"
       >
         <div className="formselector">
           <h1>Sign up</h1>
