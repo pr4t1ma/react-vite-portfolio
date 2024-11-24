@@ -17,7 +17,7 @@ export const Header = () => {
 
   return (
     <header className="bg-oxblood text-white sticky top-0 z-10">
-      <div className="container mx-auto  gap-16 flex items-center p-20">
+      <div className="container mx-auto  gap-16 flex items-center p-10">
         <Logo />
         <div className="mobile-menu hidden">
           {isMenuOpen ? "x" : "="}

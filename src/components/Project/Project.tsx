@@ -23,24 +23,39 @@ export const Project: FC<ProjactProps> = ({
   web,
 }) => {
   return (
-    <div className=" md:mx-auto bg-white shadow-2xl shadow-gray lg:my-10 p-7 ">
+    <div className=" md:mx-auto bg-white shadow-lg shadow-gray p-7 rounded-lg border border-trueGray-100">
       <div className="project-header flex justify-between">
-        <div className="project-folder ">
+        <div className="project-folder p-2">
           <FontAwesomeIcon className=" text-2xl text-oxblood" icon={faFolder} />
         </div>
-        <div className="polyline text-2xl text-oxblood flex gap-3 ">
+        <div className="polyline text-2xl text-oxblood flex gap-4">
           {web && (
-            <a target="_blank" rel="noreferrer" href={web}>
+            <a
+              className="hover:bg-trueGray-100 block h-10 p-2 rounded-full w-10 text-center"
+              target="_blank"
+              rel="noreferrer"
+              href={web}
+            >
               <FontAwesomeIcon icon={faGlobe} />
             </a>
           )}
           {github && (
-            <a target="_blank" rel="noreferrer" href={github}>
+            <a
+              className="hover:bg-trueGray-100 block h-10 p-2 rounded-full w-10 text-center"
+              target="_blank"
+              rel="noreferrer"
+              href={github}
+            >
               <FontAwesomeIcon icon={faGithub} />
             </a>
           )}
           {figma && (
-            <a target="_blank" rel="noreferrer" href={figma}>
+            <a
+              className="hover:bg-trueGray-100 block h-10 p-2 rounded-full w-10 text-center"
+              target="_blank"
+              rel="noreferrer"
+              href={figma}
+            >
               <FontAwesomeIcon icon={faFigma} />
             </a>
           )}
@@ -53,7 +68,7 @@ export const Project: FC<ProjactProps> = ({
         >
           <img src={img || ProjectImg} alt="" />
         </div>
-        <h3 className="text-xl text-warmGray-800 bold my-2">{title}</h3>
+        <h3 className="text-2xl text-warmGray-800 bold my-2">{title}</h3>
       </div>
       <div className="project-description">
         <p>{text}</p>

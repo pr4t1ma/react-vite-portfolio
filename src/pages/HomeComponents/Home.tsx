@@ -20,9 +20,9 @@ export const Home = () => {
           <Heading text="My Skills" />
           <TabbedPanels />
         </section>
-        <section id="projects" className="pt-5">
+        <section id="projects" className="pt-5 mb-20">
           <Heading text="My featured Projects" />
-          <div className="Projects container  mx-auto grid gap-3 grid-cols-1  my-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:my-10">
+          <div className="Projects container px-4  mx-auto grid gap-8 grid-cols-1  my-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 ">
             <Project
               img={imgBundesplaz}
               bgColor="#F5C824"

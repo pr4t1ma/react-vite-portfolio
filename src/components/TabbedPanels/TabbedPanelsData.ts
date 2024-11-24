@@ -8,7 +8,7 @@ export const items = [
 
 export const panelsData = [
   {
-    heading: "HTM  ",
+    heading: "HTML",
     // date: "2014 ",
     text: `During my self-learning journey with HTML, I became fascinated by how important it is in web development. With regular practice and exploration, I quickly grew from a beginner to a confident HTML developer. 
 `
