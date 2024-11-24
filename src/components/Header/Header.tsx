@@ -10,7 +10,7 @@ export const Header = () => {
     // { label: "Works", href: "/Works" },
     // { label: "Experence", href: "/experence" },
 
-    { label: "Contact", href: "/contact" },
+    // { label: "Contact", href: "/contact" },
   ];
   return (
     <header className=" p-3 py-9">
