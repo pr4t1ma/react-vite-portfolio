@@ -5,7 +5,7 @@ const Menu = () => (
   <ul className="flex gap-10">
     <li>
       <a href="#skills">Skills</a>
-    </li>{" "}
+    </li>
     <li>
       <a href="#projects">Projects</a>
     </li>

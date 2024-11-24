@@ -2,6 +2,7 @@ import {
   faFacebook,
   faGithub,
   faInstagram,
+  faLinkedin,
   // faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,9 +18,13 @@ export const SocialMediaIcon = () => {
         <FontAwesomeIcon icon={faInstagram} />
       </a>
 
-      {/* <FontAwesomeIcon icon={faTwitter} /> */}
+      {/* <FontAwesomeIcon icon={Github} /> */}
       <a href="https://github.com/pr4t1ma">
         <FontAwesomeIcon icon={faGithub} />
+      </a>
+      {/* <FontAwesomeIcon icon={LinkedIn} /> */}
+      <a href="https://www.linkedin.com/in/pratima-maharjan/">
+        <FontAwesomeIcon icon={faLinkedin} />
       </a>
     </div>
   );
