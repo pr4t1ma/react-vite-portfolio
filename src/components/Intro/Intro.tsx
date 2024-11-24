@@ -2,7 +2,7 @@ import profilePic from "../../assets/profile-pic.png";
 
 export const Intro = () => {
   return (
-    <div className=" intro container bg-white my-20 mx-4 w-fit text-left p-20 shadow-2xl lg:mx-auto ">
+    <div className="my-5 p-5 bg-white sm:my-10 sm:p-10 w-fit text-left lg:p-20 lg:my-20  shadow-2xl lg:mx-auto ">
       <div className="flex gap-5 flex-col md:flex-row">
         <div className="md:order-2">
           <img src={profilePic} alt="" />

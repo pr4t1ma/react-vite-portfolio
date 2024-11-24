@@ -10,7 +10,7 @@ export const Footer = () => {
       {/* <h1 className="text-xl ">Hello welcome to my site</h1> */}
 
       <SocialMediaIcon text-2xl />
-      <p>@copyright 2022 Pratima</p>
+      <p className="mt-10">&copy; Copyright 2024 Pratima</p>
     </div>
   );
 };

@@ -48,12 +48,12 @@ export const Project: FC<ProjactProps> = ({
       </div>
       <div className="project-title">
         <div
-          className=" overflow-hidden rounded-lg"
+          className=" overflow-hidden rounded-lg my-4"
           style={{ backgroundColor: bgColor }}
         >
           <img src={img || ProjectImg} alt="" />
         </div>
-        <h3 className="text-3xl text-warmGray-800 bold my-2">{title}</h3>
+        <h3 className="text-xl text-warmGray-800 bold my-2">{title}</h3>
       </div>
       <div className="project-description">
         <p>{text}</p>

@@ -1,7 +1,5 @@
 import {
-  faFacebook,
   faGithub,
-  faInstagram,
   faLinkedin,
   // faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
@@ -9,22 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const SocialMediaIcon = () => {
   return (
-    <div className="Social-icon flex justify-center mb-10 wrap-wrap gap-5 text-2xl ">
-      <a href="https://www.facebook.com/pr4tima">
-        <FontAwesomeIcon icon={faFacebook} />
-      </a>
-      <a href="https://www.instagram.com/prati.ma/">
-        {" "}
-        <FontAwesomeIcon icon={faInstagram} />
+    <div className="Social-icon flex justify-center  wrap-wrap gap-8 text-2xl ">
+      <a href="https://github.com/pr4t1ma" target="_blank">
+        <FontAwesomeIcon icon={faGithub} size="xl" />
       </a>
 
-      {/* <FontAwesomeIcon icon={Github} /> */}
-      <a href="https://github.com/pr4t1ma">
-        <FontAwesomeIcon icon={faGithub} />
-      </a>
-      {/* <FontAwesomeIcon icon={LinkedIn} /> */}
-      <a href="https://www.linkedin.com/in/pratima-maharjan/">
-        <FontAwesomeIcon icon={faLinkedin} />
+      <a href="https://www.linkedin.com/in/pratima-maharjan/" target="_blank">
+        <FontAwesomeIcon icon={faLinkedin} size="xl" />
       </a>
     </div>
   );

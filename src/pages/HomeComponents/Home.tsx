@@ -3,11 +3,9 @@ import { Heading } from "../../components/Heading/Heading";
 import imgBundesplaz from "../../assets/images/bundes-01.png";
 import imgTask from "../../assets/images/Taask.jpg";
 import imgBerlinbite from "../../assets/images/brlinbites.png";
-import imgPortfolio from "../../assets/images/Portfolio.png";
 import imgHealth from "../../assets/images/Healthapp.png";
 import { Intro } from "../../components/Intro/Intro";
 import { Project } from "../../components/Project/Project";
-// import Shoppinglist from "../Shoppinglist/Shoppinglist";
 import { TabbedPanels } from "../../components/TabbedPanels/TabbedPanels";
 import { Layout } from "../Layout";
 
@@ -18,14 +16,12 @@ export const Home = () => {
         <section className="">
           <Intro />
         </section>
-
         <section id="skills" className="pt-5">
           <Heading text="My Skills" />
           <TabbedPanels />
         </section>
         <section id="projects" className="pt-5">
           <Heading text="My featured Projects" />
-          {/* <FeaturedProject /> */}
           <div className="Projects container  mx-auto grid gap-3 grid-cols-1  my-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:my-10">
             <Project
               img={imgBundesplaz}
@@ -46,14 +42,6 @@ export const Home = () => {
                I expanded my skills by learning React Native Expo to create a mobile 
                app in response to project requirements."
             />
-
-            {/* <Project
-            img={"./images/Bundes1.png"}
-            title="Bundesplatz kino"
-            github="https://github.com/pr4t1ma/bundesplatz-kino"
-            text="To build this website, I utilized the latest technologies, specifically React.js for efficient and dynamic front-end development and Tailwind CSS for streamlined and responsive design. By combining these powerful tools, I was able to create a modern, user-friendly interface that meets the needs of Bundesplatz Kino's audience
-            "
-          /> */}
 
             <Project
               img={imgBerlinbite}
@@ -79,18 +67,6 @@ export const Home = () => {
               title="Book store"
               github="https://github.com/TechLabs-Berlin/ws24-reuse-record"
               text="By designing this book store library website, we aim to create a valuable resource that enhances the user's ability to find and explore books easily. I used the latest technologies such as React.js with Tailwind CSS for the frontend and Node.js with Express for the backend."
-            />
-            <Project
-              title="portfolio project"
-              web="https://pr4t1ma.github.io/portfolio/"
-              figma="https://www.figma.com/proto/79LusJXlmKPZBcxbRdFgOi/Portfolio?node-id=1195-1826&t=bqRRyxf5x7wAyxLr-1&scaling=min-zoom&content-scaling=fixed&page-id=45%3A240&starting-point-node-id=1101%3A1747"
-              img={imgPortfolio}
-              text="This project was created to enhance my skills in HTML, CSS, and
-            JavaScript. By working on this project, I aimed to deepen my
-            understanding of front-end web development concepts and techniques.
-            Throughout the process, I gained valuable experience in structuring
-            web pages, styling elements with CSS, and implementing interactive
-          features using JavaScript"
             />
           </div>
         </section>
