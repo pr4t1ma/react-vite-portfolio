@@ -26,7 +26,7 @@ export const panelsData = [
   {
     heading: "React",
     // date: "2024",
-    text: "During my course, I delved deep into React to complete the project. I utilized React with Tailwind CSS and also learned React Native with Expo to develop a mobile app.During my course I have lern to work with components difference between higher component and dummy component.",
+    text: "During my course, I delved deep into React to complete the project. I utilized React with Tailwind CSS and also learned React Native with Expo to develop a mobile app. During my course I have learnt to work with components, difference between higher order component and dumb component.",
   },
   {
     heading: "UI/UX",
