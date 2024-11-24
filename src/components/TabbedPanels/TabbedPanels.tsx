@@ -25,7 +25,6 @@ export const TabbedPanels = () => {
                 heading={panelData.heading}
                 date={panelData.date}
                 text={panelData.text}
-                subHeading={panelData.subHeading}
               />
             )
         )}

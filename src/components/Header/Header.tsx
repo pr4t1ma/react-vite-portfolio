@@ -6,8 +6,8 @@ export const Header = () => {
   const [isMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: "Home", href: "/" },
-    // { label: "Works", href: "/Works" },
+    { label: "My Skills", href: "/my skills" },
+    { label: "Projects", href: "/projects" },
     // { label: "Experence", href: "/experence" },
 
     // { label: "Contact", href: "/contact" },

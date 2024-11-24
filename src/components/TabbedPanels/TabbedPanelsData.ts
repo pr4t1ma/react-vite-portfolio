@@ -9,7 +9,6 @@ export const items = [
 export const panelsData = [
   {
     heading: "HTMl  ",
-
     date: "2014 ",
     text: `During my self-learning journey with HTML, I became fascinated by how important it is in web development. With regular practice and exploration, I quickly grew from a beginner to a confident HTML developer. 
 `
@@ -26,7 +25,6 @@ export const panelsData = [
   },
   {
     heading: "React",
-
     date: "2024",
     text: "During my course, I delved deep into React to complete the project. I utilized React with Tailwind CSS and also learned React Native with Expo to develop a mobile app.During my course I have lern to work with components difference between higher component and dummy component.",
   },
