@@ -1,27 +1,29 @@
 import { useState } from "react";
 import { Logo } from "../Logo/Logo";
-import { Menu } from "../Menu/Menu";
 
+const Menu = () => (
+  <ul className="flex gap-10">
+    <li>
+      <a href="#skills">Skills</a>
+    </li>{" "}
+    <li>
+      <a href="#projects">Projects</a>
+    </li>
+  </ul>
+);
 export const Header = () => {
   const [isMenuOpen] = useState(false);
 
-  const menuItems = [
-    { label: "My Skills", href: "/my skills" },
-    { label: "Projects", href: "/projects" },
-    // { label: "Experence", href: "/experence" },
-
-    // { label: "Contact", href: "/contact" },
-  ];
   return (
     <header className=" p-3 py-9">
       <div className="container mx-auto md:grid md:grid-cols-4 gap-3 lg:grid lg:grid-cols-2 ">
         <Logo />
         <div className="mobile-menu md:hidden">
           {isMenuOpen ? "x" : "="}
-          {isMenuOpen && <Menu items={menuItems} />}
+          {isMenuOpen && <Menu />}
         </div>
         <div className="desktop-menu hidden md:block lg:block">
-          <Menu items={menuItems} />
+          <Menu />
         </div>
       </div>
     </header>

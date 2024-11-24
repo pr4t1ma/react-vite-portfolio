@@ -1,12 +1,15 @@
 import { faFigma, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFolder, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProjectImg from "../../assets/images/project.png";
+
 import { FC } from "react";
 type ProjactProps = {
   text: string;
   img?: string;
   title: string;
   figma?: string;
+  bgColor?: string;
   github?: string;
   web?: string;
 };
@@ -14,6 +17,7 @@ export const Project: FC<ProjactProps> = ({
   text,
   title,
   img,
+  bgColor = "gray",
   figma,
   github,
   web,
@@ -43,7 +47,12 @@ export const Project: FC<ProjactProps> = ({
         </div>
       </div>
       <div className="project-title">
-        <img src={img} alt="" />
+        <div
+          className=" overflow-hidden rounded-lg"
+          style={{ backgroundColor: bgColor }}
+        >
+          <img src={img || ProjectImg} alt="" />
+        </div>
         <h3 className="text-3xl text-warmGray-800 bold my-2">{title}</h3>
       </div>
       <div className="project-description">

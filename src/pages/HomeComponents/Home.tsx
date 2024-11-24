@@ -15,15 +15,21 @@ export const Home = () => {
   return (
     <div>
       <Layout>
-        <Intro />
-        <div>
+        <section className="">
+          <Intro />
+        </section>
+
+        <section id="skills" className="pt-5">
           <Heading text="My Skills" />
           <TabbedPanels />
+        </section>
+        <section id="projects" className="pt-5">
           <Heading text="My featured Projects" />
           {/* <FeaturedProject /> */}
           <div className="Projects container  mx-auto grid gap-3 grid-cols-1  my-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:my-10">
             <Project
               img={imgBundesplaz}
+              bgColor="#F5C824"
               title="Bundesplatz kino"
               web="https://pr4t1ma.github.io/bundesplatz-kino/#/"
               github="https://github.com/pr4t1ma/bundesplatz-kino"
@@ -51,6 +57,7 @@ export const Home = () => {
 
             <Project
               img={imgBerlinbite}
+              bgColor="#ddc"
               title="Berlin bites"
               figma="https://www.figma.com/proto/IVBX8yWlBTr5jAuJU99CRT/Wireframe?node-id=480-23769&t=fb3oAlZFBfsLMSRi-1&scaling=min-zoom&content-scaling=fixed&page-id=143%3A29354&starting-point-node-id=143%3A31615"
               text="The problem we aim to solve with this website is helping users find the best restaurants in Berlin. Berlin Bites is an AI-driven restaurant recommender that analyzes user reviews to deliver personalized dining suggestions"
@@ -58,12 +65,13 @@ export const Home = () => {
             <Project
               img={imgTask}
               title="Tassk"
-              figma="https://www.figma.com/proto/HLS6XWJzJjfZAfafl3YXu6/Task-management-app?node-id=445-8052&t=tYhmJTxzb4kfJb5O-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A2&starting-point-node-id=445%3A8122&show-proto-sidebar=1https://www.figma.com/proto/HLS6XWJzJjfZAfafl3YXu6/Task-management-app?node-id=420-7149&t=tYhmJTxzb4kfJb5O-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A2&starting-point-node-id=420%3A7255&show-proto-sidebar=1https://www.figma.com/proto/HLS6XWJzJjfZAfafl3YXu6/Task-management-app?node-id=420-7211&t=tYhmJTxzb4kfJb5O-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A2&starting-point-node-id=420%3A7255&show-proto-sidebar=1"
+              figma="https://www.figma.com/proto/HLS6XWJzJjfZAfafl3YXu6/Task-management-app?node-id=445-8052&t=tYhmJTxzb4kfJb5O-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A2&starting-point-node-id=445%3A8122&show-proto-sidebar=1"
               text="The primary audience for the task management app consists of users working in IT companies. The main goal of this app is to enable users to work effectively and efficiently by prioritizing deadlines and tasks."
             />
             <Project
               img={imgHealth}
               title="Health App"
+              bgColor="#00A8AB"
               figma="https://www.figma.com/proto/iXi2ChI0nOwo3D3qPWXz7m/Health-app?node-id=424-2483&t=vQFsUL1HYAMFtaV0-1&scaling=min-zoom&content-scaling=fixed&page-id=424%3A2283&starting-point-node-id=424%3A2491"
               text="The problem we are addressing is managing health issues, specifically controlling blood pressure and sugar levels by tracking vital signs. Our solution aims to provide users with a comprehensive tool for monitoring their health metrics, offering personalized insights and alerts to help them maintain optimal health."
             />
@@ -85,7 +93,7 @@ export const Home = () => {
           features using JavaScript"
             />
           </div>
-        </div>
+        </section>
       </Layout>
     </div>
   );
