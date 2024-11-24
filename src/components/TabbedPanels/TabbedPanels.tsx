@@ -23,7 +23,6 @@ export const TabbedPanels = () => {
               <Panels
                 key={i}
                 heading={panelData.heading}
-                date={panelData.date}
                 text={panelData.text}
               />
             )

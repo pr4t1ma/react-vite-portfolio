@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Logo } from "../Logo/Logo";
 
 const Menu = () => (
-  <ul className="flex gap-10">
+  <ul className="flex gap-10 text-2xl text-bold">
     <li>
       <a href="#skills">Skills</a>
     </li>
