@@ -16,14 +16,15 @@ export const Intro = () => {
 
           <div className="info-me my-1">
             <p className="text-lg leading-relaxed text-gray-700 font-light max-w-prose space-y-4">
-              I'm a UI/UX designer diving into web development. I'm passionate
-              about creating seamless user experiences by blending design with
-              technology. I am currently focusing on learning HTML, CSS,
-              JavaScript, and React (frontend web development) through online
-              platforms like Coursera and Udemy. I have also completed a
-              JavaScript course from ReDI School and web development courses
-              from TechLabs, along with a project. My hobbies are watching
-              movies, listening to music, and traveling.
+              I'm a UI/UX designer currently diving into web development. I am
+              passionate about creating seamless user experiences by blending
+              design with technology. At the moment, I am focusing on learning
+              HTML, CSS, Tailwind CSS, Webflow, JavaScript, and React (frontend
+              development) through online platforms like Coursera and Udemy. I
+              have also completed a JavaScript course at ReDI School and web
+              development courses at TechLabs, where I worked on several
+              projects. In my free time, I enjoy watching movies, listening to
+              music, and traveling.
             </p>
           </div>
         </div>
