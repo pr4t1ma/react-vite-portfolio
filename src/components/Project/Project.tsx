@@ -2,6 +2,7 @@ import { faFigma, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFolder, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProjectImg from "../../assets/images/project.png";
+import { Link } from "react-router-dom";
 
 import { FC } from "react";
 type ProjactProps = {
@@ -12,6 +13,7 @@ type ProjactProps = {
   bgColor?: string;
   github?: string;
   web?: string;
+  projectPath?: string;
 };
 export const Project: FC<ProjactProps> = ({
   text,
@@ -21,40 +23,44 @@ export const Project: FC<ProjactProps> = ({
   figma,
   github,
   web,
+  projectPath,
 }) => {
   return (
-    <div className=" md:mx-auto bg-white shadow-lg shadow-gray p-7 rounded-lg border border-trueGray-100">
+    <div className="md:mx-auto bg-white dark:bg-gray-800 shadow-lg shadow-gray p-7 rounded-lg border border-trueGray-100 dark:border-gray-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
       <div className="project-header flex justify-between">
         <div className="project-folder p-2">
-          <FontAwesomeIcon className=" text-2xl text-oxblood" icon={faFolder} />
+          <FontAwesomeIcon className="text-2xl text-oxblood" icon={faFolder} />
         </div>
         <div className="polyline text-2xl text-oxblood flex gap-4">
           {web && (
             <a
-              className="hover:bg-trueGray-100 block h-10 p-2 rounded-full w-10 text-center"
+              className="hover:rounded-full w-10 h-10 p-2 text-center block transition hover:bg-gray-100 dark:hover:bg-gray-700"
               target="_blank"
               rel="noreferrer"
               href={web}
+              aria-label={`Visit ${title} website`}
             >
               <FontAwesomeIcon icon={faGlobe} />
             </a>
           )}
           {github && (
             <a
-              className="hover:bg-trueGray-100 block h-10 p-2 rounded-full w-10 text-center"
+              className="hover:rounded-full w-10 h-10 p-2 text-center block transition hover:bg-gray-100 dark:hover:bg-gray-700"
               target="_blank"
               rel="noreferrer"
               href={github}
+              aria-label={`View ${title} on GitHub`}
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
           )}
           {figma && (
             <a
-              className="hover:bg-trueGray-100 block h-10 p-2 rounded-full w-10 text-center"
+              className="hover:rounded-full w-10 h-10 p-2 text-center block transition hover:bg-gray-100 dark:hover:bg-gray-700"
               target="_blank"
               rel="noreferrer"
               href={figma}
+              aria-label={`View ${title} Figma design`}
             >
               <FontAwesomeIcon icon={faFigma} />
             </a>
@@ -63,15 +69,30 @@ export const Project: FC<ProjactProps> = ({
       </div>
       <div className="project-title">
         <div
-          className=" overflow-hidden rounded-lg my-4"
+          className="overflow-hidden rounded-lg my-4"
           style={{ backgroundColor: bgColor }}
         >
-          <img src={img || ProjectImg} alt="" />
+          <img
+            src={img || ProjectImg}
+            alt={`${title} project preview`}
+            loading="lazy"
+            className="w-full h-auto"
+          />
         </div>
-        <h3 className="text-2xl text-warmGray-800 bold my-2">{title}</h3>
+        <h3 className="text-2xl font-poppins font-bold my-2 text-hover-glow text-gray-800 dark:text-white">
+          {title}
+        </h3>
       </div>
       <div className="project-description">
-        <p>{text}</p>
+        <p className="text-gray-700 dark:text-gray-300 mb-4">{text}</p>
+        {projectPath && (
+          <Link
+            to={projectPath}
+            className="inline-block bg-accent text-white px-4 py-2 rounded font-poppins font-semibold hover:opacity-90 transition"
+          >
+            View Details
+          </Link>
+        )}
       </div>
     </div>
   );

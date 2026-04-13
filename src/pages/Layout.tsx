@@ -6,7 +6,9 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <main className="bg-white dark:bg-gray-900 text-gray-800 dark:text-white transition-colors duration-300">
+        {children}
+      </main>
       <Footer />
     </>
   );

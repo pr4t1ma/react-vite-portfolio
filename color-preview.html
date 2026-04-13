@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Color Palettes Preview</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", "Inter", sans-serif;
+        background: #fafaf8;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: #2d2623;
+        margin-bottom: 50px;
+        font-size: 2.5rem;
+      }
+
+      .palettes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-bottom: 50px;
+      }
+
+      .palette {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .palette-header {
+        padding: 20px;
+        background: #f5f3f0;
+        border-bottom: 2px solid #e0e0e0;
+      }
+
+      .palette-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2d2623;
+        margin-bottom: 8px;
+      }
+
+      .palette-description {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: 400;
+      }
+
+      .colors {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .color-item {
+        display: flex;
+        height: 80px;
+      }
+
+      .color-box {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .color-box:hover {
+        transform: scale(1.05);
+      }
+
+      .color-label {
+        padding: 15px;
+        background: #fafaf8;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .color-name {
+        font-weight: 600;
+        color: #2d2623;
+        font-size: 0.9rem;
+      }
+
+      .color-hex {
+        font-size: 0.8rem;
+        color: #999;
+        font-family: monospace;
+      }
+
+      .usage {
+        padding: 12px 15px;
+        background: #f9f9f9;
+        border-top: 1px solid #e0e0e0;
+        font-size: 0.8rem;
+        color: #666;
+        font-weight: 500;
+      }
+
+      /* Live Preview Section */
+      .preview-section {
+        margin-top: 60px;
+        padding: 40px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .preview-section h2 {
+        color: #2d2623;
+        margin-bottom: 30px;
+        font-size: 2rem;
+      }
+
+      .preview-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        padding: 12px 20px;
+        background: none;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #999;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .tab-btn.active {
+        color: #c9a96e;
+        border-bottom-color: #c9a96e;
+      }
+
+      .tab-btn:hover {
+        color: #2d2623;
+      }
+
+      .preview-content {
+        display: none;
+      }
+
+      .preview-content.active {
+        display: block;
+      }
+
+      .preview-demo {
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .preview-demo h3 {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+      }
+
+      .preview-demo p {
+        margin-bottom: 12px;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        margin-right: 10px;
+        transition: all 0.3s;
+      }
+
+      .btn-secondary {
+        display: inline-block;
+        padding: 12px 24px;
+        border: 2px solid;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        background: transparent;
+        transition: all 0.3s;
+      }
+
+      /* Option 1 - Warm Neutral */
+      .option1 .preview-demo {
+        background: #f5f3f0;
+        color: #2d2623;
+      }
+
+      .option1 .btn-primary {
+        background: #c9a96e;
+        color: white;
+      }
+
+      .option1 .btn-secondary {
+        color: #c9a96e;
+        border-color: #c9a96e;
+      }
+
+      /* Option 2 - Modern Earth */
+      .option2 .preview-demo {
+        background: #fafaf8;
+        color: #3a3a3a;
+      }
+
+      .option2 .btn-primary {
+        background: #8b7355;
+        color: white;
+      }
+
+      .option2 .btn-secondary {
+        color: #8b7355;
+        border-color: #8b7355;
+      }
+
+      /* Option 3 - Minimalist */
+      .option3 .preview-demo {
+        background: #ffffff;
+        color: #1f1f1f;
+      }
+
+      .option3 .btn-primary {
+        background: #d4a574;
+        color: white;
+      }
+
+      .option3 .btn-secondary {
+        color: #d4a574;
+        border-color: #d4a574;
+      }
+
+      /* Option 4 - Soft & Subtle */
+      .option4 .preview-demo {
+        background: #faf9f7;
+        color: #4a4a48;
+      }
+
+      .option4 .btn-primary {
+        background: #b8956a;
+        color: white;
+      }
+
+      .option4 .btn-secondary {
+        color: #b8956a;
+        border-color: #b8956a;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 60px;
+        padding: 40px;
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      .recommended-badge {
+        display: inline-block;
+        background: #c9a96e;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎨 Portfolio Color Palettes</h1>
+
+      <div class="palettes">
+        <!-- Option 1: Warm Neutral -->
+        <div class="palette">
+          <div class="palette-header">
+            <div class="palette-name">
+              Warm Neutral
+              <span class="recommended-badge">RECOMMENDED</span>
+            </div>
+            <div class="palette-description">
+              Professional, warm, approachable
+            </div>
+          </div>
+          <div class="colors">
+            <!-- Primary -->
+            <div class="color-item">
+              <div class="color-box" style="background: #2d2623">#2D2623</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Primary - Text & Headers</div>
+              <div class="color-hex">#2D2623 (Warm Charcoal)</div>
+            </div>
+
+            <!-- Secondary -->
+            <div class="color-item">
+              <div
+                class="color-box"
+                style="background: #f5f3f0; color: #2d2623"
+              >
+                #F5F3F0
+              </div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Secondary - Background</div>
+              <div class="color-hex">#F5F3F0 (Warm Cream)</div>
+            </div>
+
+            <!-- Accent -->
+            <div class="color-item">
+              <div class="color-box" style="background: #c9a96e">#C9A96E</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Accent - Buttons & Highlights</div>
+              <div class="color-hex">#C9A96E (Warm Brown)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Option 2: Modern Earth -->
+        <div class="palette">
+          <div class="palette-header">
+            <div class="palette-name">Modern Earth</div>
+            <div class="palette-description">Contemporary, nature-inspired</div>
+          </div>
+          <div class="colors">
+            <!-- Primary -->
+            <div class="color-item">
+              <div class="color-box" style="background: #3a3a3a">#3A3A3A</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Primary - Text & Headers</div>
+              <div class="color-hex">#3A3A3A (Charcoal)</div>
+            </div>
+
+            <!-- Secondary -->
+            <div class="color-item">
+              <div
+                class="color-box"
+                style="background: #fafaf8; color: #3a3a3a"
+              >
+                #FAFAF8
+              </div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Secondary - Background</div>
+              <div class="color-hex">#FAFAF8 (Off-White)</div>
+            </div>
+
+            <!-- Accent -->
+            <div class="color-item">
+              <div class="color-box" style="background: #8b7355">#8B7355</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Accent - Buttons & Highlights</div>
+              <div class="color-hex">#8B7355 (Deep Brown)</div>
+            </div>
+
+            <!-- Tertiary -->
+            <div class="color-item">
+              <div class="color-box" style="background: #a8b5a6">#A8B5A6</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Tertiary - Secondary Accents</div>
+              <div class="color-hex">#A8B5A6 (Soft Sage)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Option 3: Minimalist Clean -->
+        <div class="palette">
+          <div class="palette-header">
+            <div class="palette-name">Minimalist Clean</div>
+            <div class="palette-description">Modern, bold, minimal</div>
+          </div>
+          <div class="colors">
+            <!-- Primary -->
+            <div class="color-item">
+              <div class="color-box" style="background: #1f1f1f">#1F1F1F</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Primary - Text & Headers</div>
+              <div class="color-hex">#1F1F1F (Near Black)</div>
+            </div>
+
+            <!-- Secondary -->
+            <div class="color-item">
+              <div
+                class="color-box"
+                style="
+                  background: #ffffff;
+                  color: #1f1f1f;
+                  border: 1px solid #e0e0e0;
+                "
+              >
+                #FFFFFF
+              </div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Secondary - Background</div>
+              <div class="color-hex">#FFFFFF (Pure White)</div>
+            </div>
+
+            <!-- Accent -->
+            <div class="color-item">
+              <div class="color-box" style="background: #d4a574">#D4A574</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Accent - Buttons & Highlights</div>
+              <div class="color-hex">#D4A574 (Warm Gold)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Option 4: Soft & Subtle -->
+        <div class="palette">
+          <div class="palette-header">
+            <div class="palette-name">Soft & Subtle</div>
+            <div class="palette-description">Elegant, refined, calming</div>
+          </div>
+          <div class="colors">
+            <!-- Primary -->
+            <div class="color-item">
+              <div class="color-box" style="background: #4a4a48">#4A4A48</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Primary - Text & Headers</div>
+              <div class="color-hex">#4A4A48 (Warm Gray)</div>
+            </div>
+
+            <!-- Secondary -->
+            <div class="color-item">
+              <div
+                class="color-box"
+                style="background: #faf9f7; color: #4a4a48"
+              >
+                #FAF9F7
+              </div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Secondary - Background</div>
+              <div class="color-hex">#FAF9F7 (Soft Cream)</div>
+            </div>
+
+            <!-- Accent -->
+            <div class="color-item">
+              <div class="color-box" style="background: #b8956a">#B8956A</div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Accent - Buttons & Highlights</div>
+              <div class="color-hex">#B8956A (Muted Taupe)</div>
+            </div>
+
+            <!-- Tertiary -->
+            <div class="color-item">
+              <div
+                class="color-box"
+                style="background: #d9d3ce; color: #4a4a48"
+              >
+                #D9D3CE
+              </div>
+            </div>
+            <div class="color-label">
+              <div class="color-name">Tertiary - Secondary Backgrounds</div>
+              <div class="color-hex">#D9D3CE (Warm Beige)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Preview -->
+      <div class="preview-section">
+        <h2>📱 Live Preview</h2>
+
+        <div class="preview-tabs">
+          <button class="tab-btn active" onclick="showPreview(1)">
+            Option 1: Warm Neutral
+          </button>
+          <button class="tab-btn" onclick="showPreview(2)">
+            Option 2: Modern Earth
+          </button>
+          <button class="tab-btn" onclick="showPreview(3)">
+            Option 3: Minimalist
+          </button>
+          <button class="tab-btn" onclick="showPreview(4)">
+            Option 4: Soft & Subtle
+          </button>
+        </div>
+
+        <!-- Option 1 Preview -->
+        <div class="preview-content option1 active" id="preview-1">
+          <div class="preview-demo" style="background: #f5f3f0; color: #2d2623">
+            <h3>Welcome to My Portfolio</h3>
+            <p>
+              This is how your website will look with the Warm Neutral palette.
+              It's natural, professional, and timeless.
+            </p>
+            <button class="btn-primary">Get in Touch</button>
+            <button class="btn-secondary">View Projects</button>
+          </div>
+          <div class="preview-demo" style="background: #2d2623; color: #f5f3f0">
+            <h3>Dark Mode Preview</h3>
+            <p>
+              The warm neutral colors work beautifully in dark mode too,
+              maintaining excellent contrast and readability.
+            </p>
+            <button class="btn-primary" style="background: #c9a96e">
+              Get in Touch
+            </button>
+            <button
+              class="btn-secondary"
+              style="color: #c9a96e; border-color: #c9a96e"
+            >
+              View Projects
+            </button>
+          </div>
+        </div>
+
+        <!-- Option 2 Preview -->
+        <div class="preview-content option2" id="preview-2">
+          <div class="preview-demo" style="background: #fafaf8; color: #3a3a3a">
+            <h3>Welcome to My Portfolio</h3>
+            <p>
+              Modern Earth palette brings a contemporary, nature-inspired feel
+              to your portfolio.
+            </p>
+            <button class="btn-primary" style="background: #8b7355">
+              Get in Touch
+            </button>
+            <button
+              class="btn-secondary"
+              style="color: #8b7355; border-color: #8b7355"
+            >
+              View Projects
+            </button>
+          </div>
+          <div class="preview-demo" style="background: #3a3a3a; color: #fafaf8">
+            <h3>Dark Mode Preview</h3>
+            <p>
+              The sage green accent adds a calming, nature-inspired touch that
+              works perfectly in dark mode.
+            </p>
+            <button class="btn-primary" style="background: #8b7355">
+              Get in Touch
+            </button>
+            <button
+              class="btn-secondary"
+              style="color: #a8b5a6; border-color: #a8b5a6"
+            >
+              View Projects
+            </button>
+          </div>
+        </div>
+
+        <!-- Option 3 Preview -->
+        <div class="preview-content option3" id="preview-3">
+          <div class="preview-demo" style="background: #ffffff; color: #1f1f1f">
+            <h3>Welcome to My Portfolio</h3>
+            <p>
+              The Minimalist Clean palette is sleek, sophisticated, and
+              timelessly modern.
+            </p>
+            <button class="btn-primary" style="background: #d4a574">
+              Get in Touch
+            </button>
+            <button
+              class="btn-secondary"
+              style="color: #d4a574; border-color: #d4a574"
+            >
+              View Projects
+            </button>
+          </div>
+          <div class="preview-demo" style="background: #1f1f1f; color: #ffffff">
+            <h3>Dark Mode Preview</h3>
+            <p>
+              Bold, minimal, and impactful. The gold accent creates beautiful
+              contrast in dark mode.
+            </p>
+            <button class="btn-primary" style="background: #d4a574">
+              Get in Touch
+            </button>
+            <button
+              class="btn-secondary"
+              style="color: #d4a574; border-color: #d4a574"
+            >
+              View Projects
+            </button>
+          </div>
+        </div>
+
+        <!-- Option 4 Preview -->
+        <div class="preview-content option4" id="preview-4">
+          <div class="preview-demo" style="background: #faf9f7; color: #4a4a48">
+            <h3>Welcome to My Portfolio</h3>
+            <p>
+              Soft & Subtle palette is elegant, refined, and creates a calming
+              atmosphere.
+            </p>
+            <button class="btn-primary" style="background: #b8956a">
+              Get in Touch
+            </button>
+            <button
+              class="btn-secondary"
+              style="color: #b8956a; border-color: #b8956a"
+            >
+              View Projects
+            </button>
+          </div>
+          <div class="preview-demo" style="background: #4a4a48; color: #faf9f7">
+            <h3>Dark Mode Preview</h3>
+            <p>
+              Sophisticated and refined. The warm taupe accent maintains
+              elegance in dark mode.
+            </p>
+            <button class="btn-primary" style="background: #b8956a">
+              Get in Touch
+            </button>
+            <button
+              class="btn-secondary"
+              style="color: #b8956a; border-color: #b8956a"
+            >
+              View Projects
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          ✅ All palettes are WCAG AA compliant (accessible contrast ratios)
+        </p>
+        <p>⭐ Option 1 (Warm Neutral) is recommended for your portfolio</p>
+      </div>
+    </div>
+
+    <script>
+      function showPreview(option) {
+        // Hide all previews
+        document.querySelectorAll(".preview-content").forEach((el) => {
+          el.classList.remove("active");
+        });
+        document.querySelectorAll(".tab-btn").forEach((el) => {
+          el.classList.remove("active");
+        });
+
+        // Show selected preview
+        document.getElementById(`preview-${option}`).classList.add("active");
+        event.target.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

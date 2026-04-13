@@ -8,19 +8,21 @@ import { Intro } from "../../components/Intro/Intro";
 import { Project } from "../../components/Project/Project";
 import { TabbedPanels } from "../../components/TabbedPanels/TabbedPanels";
 import { Layout } from "../Layout";
+import { About } from "../../components/About/About";
 
 export const Home = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
       <Layout>
         <section className="">
           <Intro />
         </section>
-        <section id="skills" className="pt-5">
+        <About />
+        <section id="skills" className="pt-5 bg-white dark:bg-gray-900">
           <Heading text="My Skills" />
           <TabbedPanels />
         </section>
-        <section id="projects" className="pt-5 mb-20">
+        <section id="projects" className="pt-5 mb-20 bg-white dark:bg-gray-900">
           <Heading text="My featured Projects" />
           <div className="Projects container px-4  mx-auto grid gap-8 grid-cols-1  my-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 ">
             <Project
@@ -30,6 +32,7 @@ export const Home = () => {
               web="https://pr4t1ma.github.io/bundesplatz-kino/#/"
               github="https://github.com/pr4t1ma/bundesplatz-kino"
               figma="https://www.figma.com/proto/TEZivjw1eL9fvCDt5Sdltq/Bundesplatz-Kino-Berlin?node-id=900-5151&t=K3cH3NJaEn9U4BUw-1&scaling=min-zoom&content-scaling=fixed&page-id=271%3A726&starting-point-node-id=900%3A6693"
+              projectPath="/project/bundesplatz-kino"
               text="Bundesplatz Kino is a local cinema targeting nearby residents. I redesigned their website with a focus on providing the best user experience. I conducted research, user interviews, and user testing to identify pain points and addressed these issues in the new design.
             "
             />
@@ -54,6 +57,7 @@ export const Home = () => {
               img={imgTask}
               title="Tassk"
               figma="https://www.figma.com/proto/HLS6XWJzJjfZAfafl3YXu6/Task-management-app?node-id=445-8052&t=tYhmJTxzb4kfJb5O-1&scaling=scale-down&content-scaling=fixed&page-id=7%3A2&starting-point-node-id=445%3A8122&show-proto-sidebar=1"
+              projectPath="/project/task-management"
               text="The primary audience for the task management app consists of users working in IT companies. The main goal of this app is to enable users to work effectively and efficiently by prioritizing deadlines and tasks."
             />
             <Project
@@ -61,6 +65,7 @@ export const Home = () => {
               title="Health App"
               bgColor="#00A8AB"
               figma="https://www.figma.com/proto/iXi2ChI0nOwo3D3qPWXz7m/Health-app?node-id=424-2483&t=vQFsUL1HYAMFtaV0-1&scaling=min-zoom&content-scaling=fixed&page-id=424%3A2283&starting-point-node-id=424%3A2491"
+              projectPath="/project/health-app"
               text="The problem we are addressing is managing health issues, specifically controlling blood pressure and sugar levels by tracking vital signs. Our solution aims to provide users with a comprehensive tool for monitoring their health metrics, offering personalized insights and alerts to help them maintain optimal health."
             />
             <Project
