@@ -1,0 +1,104 @@
+# React + Vite Portfolio Project
+
+## Overview
+A personal portfolio website built with React, TypeScript, and Vite. Features a responsive design with dark mode support, project showcases, and contact integration.
+
+## Tech Stack
+- **Framework**: React 18.3.1 with TypeScript
+- **Build Tool**: Vite 5.4.10
+- **Styling**: TailwindCSS 3.1.3 + PostCSS
+- **Routing**: React Router DOM 6.27.0
+- **Icons**: FontAwesome (solid, brands, and icons)
+- **Linting**: ESLint 9.13.0 + TypeScript ESLint
+
+## Project Structure
+```
+src/
+├── components/        # Reusable UI components (Calculator, TodoList, Tabs, etc.)
+├── pages/            # Full page routes (Home, Contact, project detail pages)
+├── hooks/            # Custom React hooks (useIntersectionObserver)
+├── Data/             # Static data files (AccordionData.js)
+├── assets/           # Images and static assets
+├── App.tsx           # Main app with router and dark mode context
+├── main.tsx          # React entry point
+└── index.css         # Global styles
+```
+
+## Key Features
+
+### Dark Mode
+- Context-based dark mode state (`DarkModeContext`)
+- Persisted to localStorage ("darkMode")
+- Applied to HTML/body elements and TailwindCSS dark: utilities
+- Smooth transitions with `duration-300`
+
+### Routing
+Routes configured in App.tsx:
+- `/` → Home page
+- `/contact` → Contact page
+- `/project/bundesplatz-kino` → Bundesplatz Kino project details
+- `/project/task-management` → Task Management project details
+- `/project/health-app` → Health App project details
+- Base path: `/react-vite-portfolio`
+
+### Project Detail Pages
+- `src/pages/Bundesplatsdetailspage/Bundesplatz.tsx`
+- `src/pages/TaskManagementDetailsPage/TaskManagement.tsx`
+- `src/pages/HealthAppDetailsPage/HealthApp.tsx`
+- In progress: `src/pages/BerlinBitesDetailsPage/BerlinBites.tsx`
+
+## Development
+
+### Scripts
+```bash
+npm run dev      # Vite dev server (HMR enabled)
+npm run build    # TypeScript compilation + Vite build
+npm run lint     # Run ESLint
+npm run preview  # Preview production build
+```
+
+### Styling Notes
+- Uses TailwindCSS with dark mode support
+- Global styles in `src/index.css`
+- Component-specific styles can use Tailwind utilities or CSS modules
+- PostCSS preprocessing for advanced features (nesting, custom properties, etc.)
+
+### TypeScript Configuration
+- Strict type checking enabled
+- React JSX transform configured
+- Both `tsconfig.app.json` and `tsconfig.node.json` present
+
+## Current Work Status
+- Modified: `src/components/Project/Project.tsx`
+- Modified: `src/index.css`
+- In progress: Berlin Bites details page (`src/pages/BerlinBitesDetailsPage/`)
+- In progress: Custom hooks (`src/hooks/`)
+- Recent commits: Animation changes, background modifications, color improvements
+
+## Common Patterns
+
+### Components
+- Most components are TypeScript (.tsx)
+- Function components with hooks
+- Uses Tailwind for styling
+
+### Context API
+- `DarkModeContext` provides dark mode state globally
+- Used in components that need theme-aware rendering
+
+### Routing
+- React Router v6 with JSX route definition
+- Consider using `useNavigate()` for programmatic navigation
+- Link components for navigation
+
+## Build Configuration
+- Vite config uses `@vitejs/plugin-react` (Babel for fast refresh)
+- TypeScript build before Vite bundling
+- Autoprefixer and PostCSS preset-env for browser compatibility
+
+## Notes for Contributors
+- Keep components modular and reusable
+- Use Context API for global state (dark mode is a good example)
+- Maintain TypeScript strict mode
+- Run `npm run lint` before committing
+- Test dark mode functionality when making visual changes
