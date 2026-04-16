@@ -26,7 +26,7 @@ export const Project: FC<ProjactProps> = ({
   projectPath,
 }) => {
   return (
-    <div className="md:mx-auto bg-white dark:bg-gray-800 shadow-lg shadow-gray p-7 rounded-lg border border-trueGray-100 dark:border-gray-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
+    <div className="md:mx-auto bg-white dark:bg-gray-800 shadow-lg shadow-gray p-7 rounded-lg border border-trueGray-100 dark:border-gray-700 card-zoom-shadow card-click-effect">
       <div className="project-header flex justify-between">
         <div className="project-folder p-2">
           <FontAwesomeIcon className="text-2xl text-oxblood" icon={faFolder} />
