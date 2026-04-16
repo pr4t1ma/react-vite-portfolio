@@ -3,7 +3,7 @@ import { AnimatedHeading } from "../AnimatedHeading/AnimatedHeading";
 
 export const Intro = () => {
   return (
-    <div className="intro-section min-h-screen flex items-center justify-center py-20 px-4 sm:px-10 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="intro-section min-h-screen flex items-center justify-center sm:px-10 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="w-full max-w-5xl">
         <div className="flex gap-12 flex-col md:flex-row items-center md:items-start">
           {/* Profile Image - Right side on desktop */}
@@ -39,16 +39,19 @@ export const Intro = () => {
             {/* Professional Title */}
             <div className="pt-4">
               <h2 className="text-2xl md:text-3xl font-poppins font-semibold text-gray-800 dark:text-gray-100 leading-relaxed">
-                UI/UX Designer <span className="text-orange-600 dark:text-orange-400">&</span> Web Developer
+                UI/UX Designer{" "}
+                <span className="text-orange-600 dark:text-orange-400">&</span>{" "}
+                Web Developer
               </h2>
               <div className="h-1 w-20 bg-gradient-to-r from-orange-600 to-orange-400 mt-4 rounded-full"></div>
             </div>
 
             {/* Description */}
             <p className="text-lg leading-relaxed font-inter max-w-prose text-gray-700 dark:text-gray-300 pt-4">
-              I'm passionate about creating seamless user experiences by blending design with technology.
-              I specialize in UI/UX design and frontend development, crafting digital products that are
-              both beautiful and functional.
+              I'm passionate about creating seamless user experiences by
+              blending design with technology. I specialize in UI/UX design and
+              frontend development, crafting digital products that are both
+              beautiful and functional.
             </p>
 
             {/* CTA Buttons */}
@@ -69,8 +72,12 @@ export const Intro = () => {
 
             {/* Scroll Indicator */}
             <div className="pt-8 animate-float">
-              <p className="text-sm text-gray-500 dark:text-gray-400">Scroll to explore</p>
-              <div className="text-2xl text-orange-600 dark:text-orange-400">↓</div>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Scroll to explore
+              </p>
+              <div className="text-2xl text-orange-600 dark:text-orange-400">
+                ↓
+              </div>
             </div>
           </div>
         </div>

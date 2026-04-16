@@ -15,7 +15,7 @@ export const Heading: FC<HeadingProps> = ({
   withBorders = false,
 }) => {
   return (
-    <div className="w-full md:w-3/4 mx-auto flex items-center justify-center gap-6 my-20 px-4">
+    <div className="w-full md:w-3/4 mx-autogap-6">
       {withBorders && (
         <div className="h-0.5 flex-1 bg-gradient-to-r from-transparent to-orange-600 dark:to-orange-400"></div>
       )}
