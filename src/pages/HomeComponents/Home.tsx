@@ -42,7 +42,7 @@ export const Home = () => {
           id="projects"
           className="animate-fade-in-up pt-5 mb-20 bg-white dark:bg-gray-900"
         >
-          <div className="container mx-auto my-20 ">
+          <div className="container max-w-4xl mx-auto ">
             <div className="mb-16">
               <Heading
                 text="My featured Projects"
@@ -53,7 +53,7 @@ export const Home = () => {
                 <div className="h-1 w-32 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full"></div>
               </div>
             </div>
-            <div className="Projects grid gap-20 grid-cols-1 my-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3">
+            <div className="Projects grid gap-20 grid-cols-1 my-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2">
               <div className="stagger-delay-1 animate-fade-in-up">
                 <Project
                   img={imgBundesplaz}

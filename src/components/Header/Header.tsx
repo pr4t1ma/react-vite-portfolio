@@ -20,7 +20,7 @@ export const Header = () => {
   const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
 
   return (
-    <header className="bg-primary dark:bg-gray-900 text-white sticky top-0 z-10 transition-colors duration-300">
+    <header className="bg-gradient-to-r from-amber-400 via-orange-400 to-rose-500 text-white sticky top-0 z-10 transition-colors duration-300">
       <div className="container mx-auto gap-16 flex items-center justify-between p-10">
         <Logo />
         <button
